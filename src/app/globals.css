@@ -1,0 +1,279 @@
+@import "tailwindcss";
+
+@theme {
+  /* カラー */
+  --color-primary: #F39F3F;
+  --color-primary-dark: #e08a2a;
+  --color-primary-light: #FFF5E6;
+  --color-bg: #FFFBF0;
+  --color-bg-white: #FFFFFF;
+  --color-bg-faq: #f2eee4;
+  --color-text: #3B2A1A;
+  --color-text-light: #6B5A4A;
+  --color-text-muted: #9B8A7A;
+  --color-border: #E8E0D6;
+  --color-border-light: #ded3c7;
+
+  /* フォント */
+  --font-sans: var(--font-noto-sans-jp), "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  --font-mincho: "Yu Mincho", "游明朝", "YuMincho", "Hiragino Mincho ProN", "HG明朝E", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-feature-settings: "palt";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ページ全体の背景 */
+.page-bg {
+  position: relative;
+  background: linear-gradient(105deg, #fff8eb 0%, #fffdf8 52%, #fff2e6 100%);
+}
+
+/* ブラー丸の漂いアニメーション（4パターン） */
+@keyframes blob-drift-0 {
+  0%, 100% { translate: 0 0; }
+  33% { translate: 80px -60px; }
+  66% { translate: -50px 40px; }
+}
+@keyframes blob-drift-1 {
+  0%, 100% { translate: 0 0; }
+  25% { translate: -90px 50px; }
+  50% { translate: 40px 80px; }
+  75% { translate: 60px -40px; }
+}
+@keyframes blob-drift-2 {
+  0%, 100% { translate: 0 0; }
+  40% { translate: 60px 70px; }
+  70% { translate: -70px -30px; }
+}
+@keyframes blob-drift-3 {
+  0%, 100% { translate: 0 0; }
+  30% { translate: -50px -80px; }
+  60% { translate: 90px 50px; }
+}
+@keyframes blob-drift-4 {
+  0%, 100% { translate: 0 0; scale: 1; }
+  50% { translate: -60px 60px; scale: 1.15; }
+}
+@keyframes blob-drift-5 {
+  0%, 100% { translate: 0 0; scale: 1; }
+  50% { translate: 70px -70px; scale: 0.9; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [style*="blob-drift"] {
+    animation: none !important;
+  }
+}
+
+/* Hero楕円画像 */
+.hero-ellipse {
+  border-radius: 58% 42% 47% 53% / 31% 29% 71% 69%;
+  overflow: hidden;
+  animation: ellipse-morph 8s ease-in-out infinite;
+}
+
+@keyframes ellipse-morph {
+  0%, 100% {
+    border-radius: 58% 42% 47% 53% / 31% 29% 71% 69%;
+  }
+  25% {
+    border-radius: 48% 52% 52% 48% / 50% 42% 58% 50%;
+  }
+  50% {
+    border-radius: 52% 48% 48% 52% / 55% 50% 50% 45%;
+  }
+  75% {
+    border-radius: 50% 50% 52% 48% / 42% 55% 45% 58%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-ellipse {
+    animation: none;
+    border-radius: 50%;
+  }
+}
+
+/* 有機的な丸画像 */
+.organic-photo {
+  border-radius: 48% 52% 46% 54% / 44% 46% 54% 56%;
+}
+
+/* カードグラス */
+.card-glass {
+  background: rgba(255, 255, 255, 0.68);
+  border: 1px solid rgba(86, 68, 53, 0.12);
+  box-shadow: 0 14px 40px rgba(76, 55, 39, 0.05);
+}
+
+/* セクション見出し共通 */
+.ak-section-head {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.ak-head-line {
+  display: block;
+  width: 58px;
+  height: 1px;
+  background: var(--color-primary);
+  margin: 20px auto;
+}
+
+/* 料金カード */
+.ak-price-card {
+  border: 1px solid var(--color-border-light);
+  background: rgba(255, 255, 255, 0.58);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+.ak-price-main {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 10px;
+  padding: 12px 0 10px;
+}
+
+.ak-price-sub {
+  border-top: 1px dashed var(--color-border-light);
+  padding-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 施術の流れ */
+.ak-flow-card {
+  position: relative;
+  border: 1px solid var(--color-border-light);
+  background: rgba(255, 255, 255, 0.58);
+  border-radius: 12px;
+  padding: 22px 14px;
+  text-align: center;
+  min-height: 315px;
+}
+
+.ak-flow-card:not(:last-child)::after {
+  content: "›";
+  position: absolute;
+  right: -17px;
+  top: 45%;
+  color: var(--color-primary);
+  font-size: 36px;
+  z-index: 2;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .ak-flow-card:not(:last-child)::after {
+    display: block;
+  }
+}
+
+/* 患者様の声カード */
+.ak-voice-card {
+  flex: 0 0 calc((100% - 40px) / 3);
+  border: 1px solid var(--color-border-light);
+  background: rgba(255, 255, 255, 0.62);
+  border-radius: 14px;
+  padding: 28px;
+}
+
+/* 推薦カード */
+.ak-recommend-card {
+  border: 1px solid var(--color-border-light);
+  background: rgba(255, 255, 255, 0.62);
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* カルーセル矢印 */
+.ak-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid var(--color-border-light);
+  font-size: 25px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: opacity 0.2s;
+}
+
+.ak-carousel-arrow.prev { left: -62px; }
+.ak-carousel-arrow.next { right: -62px; }
+
+/* カルーセルドット */
+.ak-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.ak-carousel-dots button {
+  width: 10px;
+  height: 10px;
+  border: 0;
+  border-radius: 50%;
+  background: #d6c8ba;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.ak-carousel-dots button.active {
+  background: var(--color-primary);
+}
+
+/* レスポンシブ */
+@media (max-width: 1100px) {
+  .ak-voice-card {
+    flex-basis: calc((100% - 20px) / 2);
+  }
+  .ak-carousel-arrow.prev { left: 8px; }
+  .ak-carousel-arrow.next { right: 8px; }
+}
+
+@media (max-width: 720px) {
+  .ak-flow-card:not(:last-child)::after {
+    display: none;
+  }
+  .ak-voice-card {
+    flex-basis: 100%;
+  }
+}
+
+/* スクロールバー非表示 */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
