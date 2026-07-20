@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site-config";
 export function AccessSection() {
   return (
     <section className="py-20 md:py-28" id="access">
-      <div className="mx-auto w-[min(calc(100%-2rem),1260px)]">
+      <div data-reveal className="mx-auto w-[min(calc(100%-2rem),1260px)]">
         <header className="mb-10 text-center">
           <p className="font-bold tracking-[.18em] text-primary">ACCESS</p>
           <h2 className="mt-3 font-mincho text-4xl md:text-5xl">アクセス</h2>

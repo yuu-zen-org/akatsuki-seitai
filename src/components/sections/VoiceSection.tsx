@@ -5,7 +5,7 @@ import { VoiceCarousel } from "./VoiceCarousel";
 export function VoiceSection() {
   return (
     <section className="py-[100px] max-md:py-[72px]" id="voice">
-      <div className="mx-auto w-[min(calc(100%-2rem),1260px)]">
+      <div data-reveal className="mx-auto w-[min(calc(100%-2rem),1260px)]">
         <header className="ak-section-head">
           <div className="mx-auto mb-3 h-[96px] w-[96px]">
             <Image

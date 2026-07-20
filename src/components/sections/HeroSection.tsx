@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site-config";
 export function HeroSection() {
   return (
     <section className="overflow-hidden" id="top">
-      <div className="mx-auto grid w-[min(calc(100%-2rem),1260px)] gap-8 py-10 lg:min-h-[760px] lg:grid-cols-[1.02fr_.98fr] lg:items-center lg:py-14">
+      <div className="mx-auto grid w-[min(calc(100%-2rem),1260px)] gap-6 py-6 lg:min-h-[min(760px,calc(100svh-72px))] lg:grid-cols-[1.02fr_.98fr] lg:items-center lg:py-8">
         {/* スマホ: 縦長画像＋バッジをオーバーレイ */}
         <div className="order-first -mb-36 lg:hidden">
           <div className="relative h-[520px] w-full overflow-hidden rounded-[2.5rem] shadow-xl">
@@ -33,7 +33,7 @@ export function HeroSection() {
 
         <div className="relative z-10 order-2 lg:order-1">
           {/* バッジ: PCのみ */}
-          <div className="mb-8 hidden lg:flex flex-wrap items-center gap-5">
+          <div className="mb-5 hidden lg:flex flex-wrap items-center gap-4 anim-hero-1">
             <span className="rounded-full bg-primary px-6 py-4 text-xl font-bold text-white md:text-2xl">
               {siteConfig.business.access}
             </span>
@@ -41,7 +41,7 @@ export function HeroSection() {
           </div>
 
           <p
-            className="mb-7 text-[clamp(64px,8.33vw,120px)] font-bold leading-[.92] tracking-[.13em] text-white"
+            className="mb-4 text-[clamp(52px,6.8vw,100px)] font-bold leading-[.92] tracking-[.13em] text-white anim-hero-2"
             aria-hidden="true"
           >
             SEITAIIN
@@ -49,7 +49,7 @@ export function HeroSection() {
             AKATSUKI
           </p>
 
-          <h1 className="font-mincho text-[clamp(40px,4.44vw,64px)] leading-[1.1] tracking-[.08em]">
+          <h1 className="font-mincho text-[clamp(36px,3.9vw,58px)] leading-[1.1] tracking-[.08em] anim-hero-3">
             その痛みを、
             <br />
             <span className="text-primary">&ldquo;その場しのぎ&rdquo;</span>で
@@ -57,13 +57,13 @@ export function HeroSection() {
             終わらせない。
           </h1>
 
-          <p className="mt-7 hidden text-base leading-8 text-text-muted lg:block">
+          <p className="mt-4 hidden text-base leading-8 text-text-muted lg:block anim-hero-4">
             痛みの原因を丁寧に見極め、
             <br />
             根本から整えることで、再発しにくい身体づくりをサポートします。
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row" id="reservation">
+          <div className="mt-5 flex flex-col gap-3 sm:flex-row anim-hero-5" id="reservation">
             <Link
               href="/contact"
               className="flex min-h-16 items-center justify-center gap-3 rounded-full bg-primary px-8 font-bold text-white"

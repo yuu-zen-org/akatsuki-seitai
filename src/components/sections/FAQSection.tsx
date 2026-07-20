@@ -15,7 +15,7 @@ export function FAQSection() {
 
   return (
     <section className="bg-bg-faq py-[100px] max-md:py-[72px]" id="faq">
-      <div className="mx-auto w-[min(calc(100%-2rem),61rem)]">
+      <div data-reveal className="mx-auto w-[min(calc(100%-2rem),61rem)]">
         <header className="ak-section-head">
           <p className="mb-[10px] text-[13px] font-bold tracking-[.18em] text-primary">
             Q&A

@@ -38,6 +38,40 @@ body {
   overflow-x: hidden;
 }
 
+/* ヒーロー左テキスト: 左からフェードイン */
+@keyframes fade-in-left {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.anim-hero-1 { animation: fade-in-left 0.8s ease 0.05s both; }
+.anim-hero-2 { animation: fade-in-left 0.8s ease 0.25s both; }
+.anim-hero-3 { animation: fade-in-left 0.9s ease 0.45s both; }
+.anim-hero-4 { animation: fade-in-left 0.8s ease 0.65s both; }
+.anim-hero-5 { animation: fade-in-left 0.8s ease 0.85s both; }
+
+/* スクロールリビール */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-hero-1, .anim-hero-2, .anim-hero-3, .anim-hero-4, .anim-hero-5 {
+    animation: none;
+  }
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* ページ全体の背景 */
 .page-bg {
   position: relative;
@@ -85,7 +119,7 @@ body {
 .hero-ellipse {
   border-radius: 58% 42% 47% 53% / 31% 29% 71% 69%;
   overflow: hidden;
-  animation: ellipse-morph 8s ease-in-out infinite;
+  animation: ellipse-morph 20s ease-in-out infinite;
 }
 
 @keyframes ellipse-morph {

@@ -5,7 +5,7 @@ import { reasons } from "@/data/reasons";
 export function ProblemSection() {
   return (
     <section className="pt-[40px] pb-20" id="reasons">
-      <div className="mx-auto w-[min(calc(100%-2rem),1260px)]">
+      <div data-reveal className="mx-auto w-[min(calc(100%-2rem),1260px)]">
         <div className="mb-10 flex items-center gap-4 before:h-px before:flex-1 before:bg-black/10 after:h-px after:flex-1 after:bg-black/10">
           <p className="flex items-center gap-3 text-center font-mincho tracking-[.12em]">
             <svg

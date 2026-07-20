@@ -3,7 +3,7 @@ import Image from "next/image";
 export function PhilosophySection() {
   return (
     <section className="py-20 md:py-28" id="philosophy">
-      <div className="mx-auto grid w-[min(calc(100%-2rem),1260px)] gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-20">
+      <div data-reveal className="mx-auto grid w-[min(calc(100%-2rem),1260px)] gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-20">
 
         {/* タイトル部分 — スマホ・PC共通で最初 */}
         <div className="order-1">
