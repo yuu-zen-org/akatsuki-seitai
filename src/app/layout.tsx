@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/site-config";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollRevealInit } from "@/components/ui/ScrollRevealInit";
+import { PageTransition } from "@/components/ui/PageTransition";
 import "./globals.css";
 
 const notoSansJP = Noto_Sans_JP({
@@ -68,7 +69,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <ScrollRevealInit />
         <Header />
-        {children}
+        <PageTransition>{children}</PageTransition>
         <Footer />
       </body>
     </html>
