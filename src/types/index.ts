@@ -28,11 +28,18 @@ export interface PriceItem {
   isRecommended?: boolean;
 }
 
+export interface FAQCta {
+  label: string;
+  href: string;
+  variant?: "primary" | "secondary";
+}
+
 export interface FAQ {
   id: string;
   question: string;
   answer: string;
   category?: string;
+  cta?: FAQCta[];
 }
 
 export interface Voice {

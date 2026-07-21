@@ -4,7 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { faqs } from "@/data/faq";
 
-const topFaqs = faqs.slice(0, 3);
+const TOP_FAQ_IDS = ["treatment-style", "pain", "reservation"];
+const topFaqs = TOP_FAQ_IDS.map((id) => faqs.find((f) => f.id === id)!).filter(Boolean);
 
 export function FAQSection() {
   const [openId, setOpenId] = useState<string | null>(null);

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import type { FAQ } from "@/types";
 
 export function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
@@ -32,12 +33,29 @@ export function FAQAccordion({ faqs }: { faqs: FAQ[] }) {
               </span>
             </button>
             <div
-              className="overflow-hidden transition-[max-height] duration-300 ease-in-out"
-              style={{ maxHeight: isOpen ? "500px" : "0" }}
+              className="overflow-hidden transition-[max-height] duration-500 ease-in-out"
+              style={{ maxHeight: isOpen ? "600px" : "0" }}
             >
-              <p className="px-6 pb-6 leading-8 text-text-light md:pl-[4.5rem]">
-                {faq.answer}
-              </p>
+              <div className="px-6 pb-6 md:pl-[4.5rem]">
+                <p className="leading-8 text-text-light">{faq.answer}</p>
+                {faq.cta && faq.cta.length > 0 && (
+                  <div className="mt-5 flex flex-wrap gap-3">
+                    {faq.cta.map((c) => (
+                      <Link
+                        key={c.href}
+                        href={c.href}
+                        className={
+                          c.variant === "primary"
+                            ? "inline-flex min-h-11 items-center justify-center rounded-full bg-primary px-6 text-sm font-bold text-white"
+                            : "inline-flex min-h-11 items-center justify-center rounded-full border border-border-light bg-white/80 px-6 text-sm font-bold text-primary-dark"
+                        }
+                      >
+                        {c.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         );
