@@ -55,7 +55,7 @@ export default function VoicePage() {
             <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {youtubeVoices.map((v) => (
                 <li key={v.id}>
-                  <article className="card-glass flex flex-col rounded-2xl overflow-hidden">
+                  <article className="card-glass flex h-full flex-col rounded-2xl overflow-hidden">
                     <YouTubePlayer youtubeId={v.youtubeId!} title={v.title} />
                     <div className="p-5">
                       <div className="mb-2 flex items-center gap-2 flex-wrap">
