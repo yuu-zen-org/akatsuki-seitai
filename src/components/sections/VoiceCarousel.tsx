@@ -4,6 +4,8 @@ import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import { voices } from "@/data/voices";
 
+const textVoices = voices.filter((v) => !v.youtubeId && v.imagePath);
+
 export function VoiceCarousel() {
   const [index, setIndex] = useState(0);
 
@@ -23,7 +25,7 @@ export function VoiceCarousel() {
     return () => window.removeEventListener("resize", update);
   }, [getVisible]);
 
-  const maxIndex = Math.max(0, voices.length - visible);
+  const maxIndex = Math.max(0, textVoices.length - visible);
 
   const prev = () => setIndex((i) => Math.max(0, i - 1));
   const next = () => setIndex((i) => Math.min(maxIndex, i + 1));
@@ -49,11 +51,11 @@ export function VoiceCarousel() {
             transform: `translateX(-${currentIndex * (100 / visible + 20 / visible)}%)`,
           }}
         >
-          {voices.map((voice) => (
+          {textVoices.map((voice) => (
             <article key={voice.id} className="ak-voice-card">
               <div className="relative mb-4 h-[180px] overflow-hidden rounded-[10px]">
                 <Image
-                  src={voice.imagePath}
+                  src={voice.imagePath!}
                   alt={`${voice.age ? voice.age + "・" : ""}${voice.gender}の患者様`}
                   fill
                   className="object-cover"
@@ -91,7 +93,7 @@ export function VoiceCarousel() {
       </button>
 
       <div className="ak-carousel-dots">
-        {Array.from({ length: maxIndex + 1 }, (_, i) => (
+        {Array.from({ length: Math.max(1, maxIndex + 1) }, (_, i) => (
           <button
             key={i}
             type="button"

@@ -50,7 +50,8 @@ export interface Voice {
   title: string;
   content: string;
   rating: number;
-  imagePath: string;
+  imagePath?: string;
+  youtubeId?: string;
 }
 
 export interface Symptom {
