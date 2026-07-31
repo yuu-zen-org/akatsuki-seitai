@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BackgroundBlurs } from "@/components/ui/BackgroundBlurs";
+import { CtaSection } from "@/components/sections/CtaSection";
 import { recommends } from "@/data/recommends";
 import { siteConfig } from "@/lib/site-config";
 import type { RecommendCategory } from "@/types";
@@ -164,30 +165,21 @@ export default async function RecommendDetailPage({
               ※掲載内容はご本人から寄せられた推薦文をもとに、内容を損なわない範囲で読みやすく編集・要約しています。個人の感想であり、施術の結果や効果を保証するものではありません。
             </p>
 
-            {/* ── ナビゲーション ── */}
-            <div className="flex flex-col items-center gap-6 border-t border-border-light pt-10 sm:flex-row sm:justify-between">
+            {/* 一覧へ戻る */}
+            <div className="border-t border-border-light pt-10 pb-4">
               <Link
                 href="/recommend"
                 className="text-sm font-bold text-text-light transition-opacity hover:opacity-60"
               >
                 ← 推薦一覧へ戻る
               </Link>
-              <div className="flex flex-col gap-3 sm:flex-row">
-                <Link
-                  href="/contact"
-                  className="inline-flex min-h-12 items-center justify-center rounded-full bg-primary px-7 text-sm font-bold text-white"
-                >
-                  WEBご予約はこちら
-                </Link>
-                <a
-                  href={siteConfig.contact.phoneHref}
-                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-border-light bg-white/80 px-7 text-sm font-bold text-primary-dark"
-                >
-                  {siteConfig.contact.phone}
-                </a>
-              </div>
             </div>
           </div>
+        </div>
+
+        {/* CTA */}
+        <div className="mx-auto w-[min(calc(100%-2rem),1260px)]">
+          <CtaSection />
         </div>
       </div>
     </main>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { BackgroundBlurs } from "@/components/ui/BackgroundBlurs";
 import { PageHeader } from "@/components/ui/PageHeader";
+import { CtaSection } from "@/components/sections/CtaSection";
 import { RecommendGrid } from "@/components/sections/RecommendGrid";
 import { siteConfig } from "@/lib/site-config";
 
@@ -55,31 +55,7 @@ export default function RecommendPage() {
             </div>
           </section>
 
-          {/* CTA */}
-          <section className="pb-24">
-            <div className="rounded-2xl bg-gradient-to-r from-[#f4ece3] to-[#eee2d7] p-8 text-center md:p-12">
-              <p className="font-mincho text-xl leading-[1.8] md:text-2xl">
-                まずは、現在のお悩みをお聞かせください
-              </p>
-              <p className="mt-3 text-sm text-text-light">
-                初回限定コースで、当院の施術をお試しいただけます。
-              </p>
-              <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <Link
-                  href="/contact"
-                  className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full bg-primary px-8 font-bold text-white"
-                >
-                  WEBご予約はこちら
-                </Link>
-                <a
-                  href={siteConfig.contact.phoneHref}
-                  className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full border border-border-light bg-white/80 px-8 font-bold text-primary-dark"
-                >
-                  {siteConfig.contact.phone}
-                </a>
-              </div>
-            </div>
-          </section>
+          <CtaSection />
         </div>
       </div>
     </main>
