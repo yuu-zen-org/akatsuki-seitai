@@ -52,7 +52,7 @@ export default function VoicePage() {
               </p>
             </header>
 
-            <ul className="grid gap-6 sm:grid-cols-2">
+            <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {youtubeVoices.map((v) => (
                 <li key={v.id}>
                   <article className="card-glass flex flex-col rounded-2xl overflow-hidden">
@@ -79,7 +79,7 @@ export default function VoicePage() {
             <header className="ak-section-head">
               <p className="mb-[10px] text-[13px] font-bold tracking-[.18em] text-primary">WRITTEN REVIEWS</p>
               <h2 className="font-mincho text-[clamp(24px,2.8vw,38px)] font-normal leading-[1.45] tracking-[.14em]">
-                テキストでのご感想
+                患者様のご感想
               </h2>
               <span className="ak-head-line" />
             </header>
