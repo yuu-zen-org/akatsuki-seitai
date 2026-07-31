@@ -96,11 +96,28 @@ export interface BreadcrumbItem {
   href: string;
 }
 
+export const RECOMMEND_CATEGORIES = [
+  "医師・大学関係者",
+  "理学療法士・柔道整復師・鍼灸師",
+  "整体院・施術院経営者",
+  "スポーツ・美容・介護関係者",
+  "地域事業者・利用者",
+] as const;
+
+export type RecommendCategory = typeof RECOMMEND_CATEGORIES[number];
+
 export interface Recommend {
   id: string;
   name: string;
-  title: string;
+  nameKana: string;
+  slug: string;
+  organization: string;
   role: string;
-  quote: string;
-  imagePath: string;
+  category: RecommendCategory;
+  title: string;
+  summary: string;
+  fullText?: string;
+  image?: string;
+  featured?: boolean;
+  sortOrder: number;
 }

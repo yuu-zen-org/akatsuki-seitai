@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { recommends } from "@/data/recommend";
+import { recommends } from "@/data/recommends";
+
+const featured = recommends.filter((r) => r.featured).slice(0, 5);
 
 export function RecommendSection() {
   return (
@@ -28,23 +30,30 @@ export function RecommendSection() {
         </header>
 
         <div className="grid gap-[18px] lg:grid-cols-5 max-[1100px]:grid-cols-2 max-[720px]:grid-cols-1">
-          {recommends.map((rec) => (
+          {featured.map((rec) => (
             <article key={rec.id} className="ak-recommend-card">
               <div className="relative mx-auto h-[160px] w-[160px] overflow-hidden rounded-full bg-[#f2e8df]">
-                <Image
-                  src={rec.imagePath}
-                  alt={rec.name}
-                  fill
-                  className="object-cover"
-                  sizes="160px"
-                />
+                {rec.image ? (
+                  <Image
+                    src={rec.image}
+                    alt={rec.name}
+                    fill
+                    className="object-cover"
+                    sizes="160px"
+                  />
+                ) : (
+                  <span className="absolute inset-0 flex items-center justify-center font-mincho text-2xl text-[#c4956a]">
+                    {rec.name.replace(/\s/g, "").slice(0, 2)}
+                  </span>
+                )}
               </div>
-              <p className="mt-4 whitespace-pre-line text-center text-[11px] leading-[1.6] text-text-light">
-                {rec.title}
+              <p className="mt-4 text-center text-[11px] leading-[1.6] text-text-light">
+                {rec.organization && <span className="block">{rec.organization}</span>}
+                {rec.role}
               </p>
-              <h3 className="mt-[6px] text-center font-mincho text-lg">{rec.name}</h3>
-              <blockquote className="mt-3 text-xs leading-[1.9] text-text-light">
-                {rec.quote}
+              <h3 className="mt-[6px] text-center font-mincho text-lg">{rec.name} 様</h3>
+              <blockquote className="mt-3 line-clamp-4 text-xs leading-[1.9] text-text-light">
+                {rec.summary}
               </blockquote>
               <p className="mt-3 text-[10px] text-text-light/60">
                 ※個人の感想であり、成果や成功を保証するものではありません
