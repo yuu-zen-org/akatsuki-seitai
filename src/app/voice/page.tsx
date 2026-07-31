@@ -64,9 +64,14 @@ export default function VoicePage() {
                         </span>
                         <Stars rating={v.rating} />
                       </div>
-                      <h3 className="text-sm font-bold leading-[1.6] text-text">
+                      <p className="mb-1 text-sm font-bold leading-[1.6] text-text">
                         {v.title}
-                      </h3>
+                      </p>
+                      {v.content && (
+                        <p className="mt-2 text-xs leading-[1.9] text-text-light">
+                          {v.content}
+                        </p>
+                      )}
                     </div>
                   </article>
                 </li>
