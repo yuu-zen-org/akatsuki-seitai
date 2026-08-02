@@ -64,121 +64,128 @@ export default async function RecommendDetailPage({
             </ol>
           </nav>
 
-          <div className="mx-auto max-w-2xl pb-28">
+          {/* ── 2カラムレイアウト ── */}
+          <div className="mb-20 flex gap-10 max-md:flex-col md:items-start md:gap-14">
 
-            {/* ── プロフィール（センター配置） ── */}
-            <div className="mb-12 text-center">
-              {/* 写真 */}
-              <div className="mx-auto mb-6 h-[130px] w-[130px]">
-                {rec.image ? (
-                  <div className="relative h-[130px] w-[130px] overflow-hidden rounded-full shadow-[0_4px_24px_rgba(160,120,80,0.2)] ring-[4px] ring-white/90">
-                    <Image
-                      src={rec.image}
-                      alt={rec.name}
-                      fill
-                      className="object-cover object-top"
-                      sizes="130px"
-                      priority
-                    />
-                  </div>
-                ) : (
-                  <div className="grid h-[130px] w-[130px] place-items-center rounded-full bg-[#f0e8df] shadow-[0_4px_24px_rgba(160,120,80,0.2)] ring-[4px] ring-white/90">
-                    <span className="font-mincho text-3xl text-[#c4956a]">{initials}</span>
-                  </div>
-                )}
-              </div>
-
-              {/* カテゴリー */}
-              <span
-                className="inline-block rounded-full px-3 py-1 text-[11px] font-bold"
-                style={{ background: badge.bg, color: badge.text }}
+            {/* 左カラム：プロフィール */}
+            <aside className="md:sticky md:top-8 md:w-[260px] md:flex-shrink-0">
+              <div
+                className="rounded-[1.75rem] p-8 text-center"
+                style={{
+                  background: "rgba(255, 248, 235, 0.78)",
+                  border: "1px solid rgba(86, 68, 53, 0.10)",
+                  boxShadow: "0 8px 32px rgba(76, 55, 39, 0.06)",
+                }}
               >
-                {rec.category}
-              </span>
+                {/* 写真 */}
+                <div className="mx-auto mb-5 h-[160px] w-[160px]">
+                  {rec.image ? (
+                    <div className="relative h-[160px] w-[160px] overflow-hidden rounded-full shadow-[0_4px_24px_rgba(160,120,80,0.2)] ring-[4px] ring-white/90">
+                      <Image
+                        src={rec.image}
+                        alt={rec.name}
+                        fill
+                        className="object-cover object-top"
+                        sizes="160px"
+                        priority
+                      />
+                    </div>
+                  ) : (
+                    <div className="grid h-[160px] w-[160px] place-items-center rounded-full bg-[#f0e8df] shadow-[0_4px_24px_rgba(160,120,80,0.2)] ring-[4px] ring-white/90">
+                      <span className="font-mincho text-4xl text-[#c4956a]">{initials}</span>
+                    </div>
+                  )}
+                </div>
 
-              {/* 所属・氏名・読み・役職 */}
-              {rec.organization && (
-                <p className="mt-3 text-sm text-text-muted">{rec.organization}</p>
-              )}
-              <p className="mt-1 font-mincho text-[28px] tracking-[.1em]">{rec.name} 様</p>
-              <p className="mt-0.5 text-xs tracking-[.15em] text-text-muted">{rec.nameKana}</p>
-              <p className="mt-2 text-[13px] text-text-light">{rec.role}</p>
-            </div>
+                {/* カテゴリー */}
+                <span
+                  className="inline-block rounded-full px-3 py-1 text-[11px] font-bold"
+                  style={{ background: badge.bg, color: badge.text }}
+                >
+                  {rec.category}
+                </span>
 
-            {/* ── 装飾区切り ── */}
-            <div className="mb-12 flex items-center gap-4">
-              <div className="h-px flex-1 bg-border-light" />
-              <span className="text-[11px] text-primary/40">✦</span>
-              <div className="h-px flex-1 bg-border-light" />
-            </div>
+                {/* 所属・氏名・読み・役職 */}
+                {rec.organization && (
+                  <p className="mt-4 text-[12px] leading-[1.7] text-text-muted">{rec.organization}</p>
+                )}
+                <p className="mt-2 font-mincho text-[22px] tracking-[.08em]">{rec.name} 様</p>
+                <p className="mt-1 text-[11px] tracking-[.15em] text-text-muted">{rec.nameKana}</p>
 
-            {/* ── 推薦タイトル ── */}
-            <div className="mb-10 text-center">
+                <div className="my-4 flex items-center gap-3">
+                  <div className="h-px flex-1 bg-border-light" />
+                  <span className="text-[9px] text-primary/30">✦</span>
+                  <div className="h-px flex-1 bg-border-light" />
+                </div>
+
+                <p className="text-[12px] text-text-light">{rec.role}</p>
+              </div>
+            </aside>
+
+            {/* 右カラム：推薦内容 */}
+            <div className="min-w-0 flex-1">
+              {/* RECOMMENDATIONラベル + タイトル */}
               <p
-                className="font-mincho text-[11px] font-bold tracking-[.2em] text-text-muted"
+                className="mb-4 font-mincho text-[11px] font-bold tracking-[.2em] text-text-muted"
                 aria-hidden="true"
               >
                 RECOMMENDATION
               </p>
-              <p className="mt-4 font-mincho text-[22px] leading-[1.75] tracking-[.06em] text-primary-dark">
+              <p className="mb-8 font-mincho text-[24px] leading-[1.75] tracking-[.06em] text-primary-dark md:text-[26px]">
                 「{rec.title}」
               </p>
-            </div>
 
-            {/* ── 推薦内容 ── */}
-            <div
-              className="mb-4 rounded-[1.5rem] p-8 md:p-10"
-              style={{
-                background: "rgba(255, 248, 235, 0.78)",
-                border: "1px solid rgba(86, 68, 53, 0.10)",
-                boxShadow: "0 8px 32px rgba(76, 55, 39, 0.06)",
-              }}
-            >
-              {/* 大きな引用符（装飾） */}
-              <p
-                className="mb-4 font-mincho text-[72px] leading-none text-primary/10 select-none"
-                aria-hidden="true"
+              {/* 推薦内容ボックス */}
+              <div
+                className="mb-5 rounded-[1.5rem] p-8 md:p-10"
+                style={{
+                  background: "rgba(255, 248, 235, 0.78)",
+                  border: "1px solid rgba(86, 68, 53, 0.10)",
+                  boxShadow: "0 8px 32px rgba(76, 55, 39, 0.06)",
+                }}
               >
-                「
+                <p
+                  className="mb-4 font-mincho text-[64px] leading-none text-primary/10 select-none"
+                  aria-hidden="true"
+                >
+                  「
+                </p>
+                <p className="text-[14px] leading-[2.2] text-text-light">{rec.summary}</p>
+
+                {rec.fullText && (
+                  <>
+                    <div className="my-8 flex items-center gap-4">
+                      <div className="h-px flex-1 bg-border-light" />
+                      <span className="text-[10px] text-primary/30">✦</span>
+                      <div className="h-px flex-1 bg-border-light" />
+                    </div>
+                    <p className="mb-4 text-[11px] font-bold tracking-[.15em] text-text-muted">
+                      推薦文（原文）
+                    </p>
+                    <blockquote className="text-[14px] leading-[2.2] text-text-light">
+                      {rec.fullText}
+                    </blockquote>
+                  </>
+                )}
+              </div>
+
+              {/* 免責 */}
+              <p className="text-[11px] leading-[1.9] text-text-muted">
+                ※掲載内容はご本人から寄せられた推薦文をもとに、内容を損なわない範囲で読みやすく編集・要約しています。個人の感想であり、施術の結果や効果を保証するものではありません。
               </p>
-              <p className="text-[14px] leading-[2.2] text-text-light">{rec.summary}</p>
-
-              {rec.fullText && (
-                <>
-                  <div className="my-8 flex items-center gap-4">
-                    <div className="h-px flex-1 bg-border-light" />
-                    <span className="text-[10px] text-primary/30">✦</span>
-                    <div className="h-px flex-1 bg-border-light" />
-                  </div>
-                  <p className="mb-4 text-[11px] font-bold tracking-[.15em] text-text-muted">
-                    推薦文（原文）
-                  </p>
-                  <blockquote className="text-[14px] leading-[2.2] text-text-light">
-                    {rec.fullText}
-                  </blockquote>
-                </>
-              )}
-            </div>
-
-            {/* 免責 */}
-            <p className="mb-14 text-[11px] leading-[1.9] text-text-muted">
-              ※掲載内容はご本人から寄せられた推薦文をもとに、内容を損なわない範囲で読みやすく編集・要約しています。個人の感想であり、施術の結果や効果を保証するものではありません。
-            </p>
-
-            {/* 一覧へ戻る */}
-            <div className="border-t border-border-light pt-10 pb-4">
-              <Link
-                href="/recommend"
-                className="text-sm font-bold text-text-light transition-opacity hover:opacity-60"
-              >
-                ← 推薦一覧へ戻る
-              </Link>
             </div>
           </div>
-        </div>
 
-        {/* CTA */}
-        <div className="mx-auto w-[min(calc(100%-2rem),1260px)]">
+          {/* 一覧へ戻る */}
+          <div className="mb-6 border-t border-border-light pt-8">
+            <Link
+              href="/recommend"
+              className="text-sm font-bold text-text-light transition-opacity hover:opacity-60"
+            >
+              ← 推薦一覧へ戻る
+            </Link>
+          </div>
+
           <CtaSection />
         </div>
       </div>
