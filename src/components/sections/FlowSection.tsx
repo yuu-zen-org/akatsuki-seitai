@@ -57,7 +57,9 @@ export function FlowSection() {
           ※ 所要時間は初回で約60分、2回目以降は約30〜40分です。
         </p>
 
-        <CtaSection />
+        <div className="hidden sm:block">
+          <CtaSection />
+        </div>
       </div>
     </section>
   );
