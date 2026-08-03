@@ -28,19 +28,12 @@ export function HeroSection() {
                 仙台市泉区で根本改善を目指す整体院
               </span>
             </div>
-            {/* 下部グラデーション + テキストオーバーレイ */}
-            <div className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/80 via-black/50 to-transparent px-6 pb-7 pt-28" aria-hidden="true">
-              <p className="text-[26px] font-bold leading-[.92] tracking-[.13em] text-white">
+            {/* テキストオーバーレイ */}
+            <div className="absolute inset-x-0 bottom-6 z-10 px-6" aria-hidden="true">
+              <p className="text-[52px] font-bold leading-[.92] tracking-[.13em] text-white">
                 SEITAIIN
                 <br />
                 AKATSUKI
-              </p>
-              <p className="mt-3 font-mincho text-[18px] leading-[1.5] tracking-[.06em] text-white">
-                その痛みを、
-                <br />
-                <span className="text-[#FFD580]">&ldquo;その場しのぎ&rdquo;</span>で
-                <br />
-                終わらせない。
               </p>
             </div>
           </div>
