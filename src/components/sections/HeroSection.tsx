@@ -6,8 +6,8 @@ export function HeroSection() {
   return (
     <section className="overflow-hidden" id="top">
       <div className="mx-auto grid w-[min(calc(100%-2rem),1260px)] gap-6 py-6 lg:min-h-[min(760px,calc(100svh-72px))] lg:grid-cols-[1.02fr_.98fr] lg:items-center lg:py-8">
-        {/* スマホ: 縦長画像＋バッジをオーバーレイ */}
-        <div className="order-first -mb-36 lg:hidden">
+        {/* スマホ: FV画像 + テキスト全オーバーレイ */}
+        <div className="order-first lg:hidden">
           <div className="relative h-[520px] w-full overflow-hidden rounded-[2.5rem] shadow-xl">
             <Image
               src="/images/top/fv.jpg"
@@ -21,12 +21,27 @@ export function HeroSection() {
             <div className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-black/40 to-transparent" />
             {/* バッジ */}
             <div className="absolute top-5 left-4 right-4 z-10 flex flex-wrap items-center gap-3">
-              <span className="rounded-full bg-primary px-5 py-3 text-base font-bold text-white">
+              <span className="rounded-full bg-primary px-4 py-2 text-sm font-bold text-white">
                 {siteConfig.business.access}
               </span>
-              <span className="font-bold text-white [text-shadow:0_1px_4px_rgba(0,0,0,0.4)]">
+              <span className="text-sm font-bold text-white [text-shadow:0_1px_4px_rgba(0,0,0,0.4)]">
                 仙台市泉区で根本改善を目指す整体院
               </span>
+            </div>
+            {/* 下部グラデーション + テキストオーバーレイ */}
+            <div className="absolute inset-x-0 bottom-0 z-10 bg-gradient-to-t from-black/80 via-black/50 to-transparent px-6 pb-7 pt-28" aria-hidden="true">
+              <p className="text-[26px] font-bold leading-[.92] tracking-[.13em] text-white">
+                SEITAIIN
+                <br />
+                AKATSUKI
+              </p>
+              <p className="mt-3 font-mincho text-[18px] leading-[1.5] tracking-[.06em] text-white">
+                その痛みを、
+                <br />
+                <span className="text-[#FFD580]">&ldquo;その場しのぎ&rdquo;</span>で
+                <br />
+                終わらせない。
+              </p>
             </div>
           </div>
         </div>
@@ -41,7 +56,7 @@ export function HeroSection() {
           </div>
 
           <p
-            className="mb-4 text-[clamp(52px,6.8vw,100px)] font-bold leading-[.92] tracking-[.13em] text-white anim-hero-2"
+            className="mb-4 hidden lg:block text-[clamp(52px,6.8vw,100px)] font-bold leading-[.92] tracking-[.13em] text-white anim-hero-2"
             aria-hidden="true"
           >
             SEITAIIN
@@ -49,12 +64,16 @@ export function HeroSection() {
             AKATSUKI
           </p>
 
-          <h1 className="font-mincho text-[clamp(36px,3.9vw,58px)] leading-[1.1] tracking-[.08em] anim-hero-3">
+          <h1 className="hidden lg:block font-mincho text-[clamp(36px,3.9vw,58px)] leading-[1.1] tracking-[.08em] anim-hero-3">
             その痛みを、
             <br />
             <span className="text-primary">&ldquo;その場しのぎ&rdquo;</span>で
             <br />
             終わらせない。
+          </h1>
+          {/* スマホ用SEOテキスト（非表示） */}
+          <h1 className="sr-only lg:hidden">
+            楓月整体院 ― その痛みを、その場しのぎで終わらせない。
           </h1>
 
           <p className="mt-4 hidden text-base leading-8 text-text-muted lg:block anim-hero-4">
