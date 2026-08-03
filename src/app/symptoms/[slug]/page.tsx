@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BackgroundBlurs } from "@/components/ui/BackgroundBlurs";
-import { CtaSection } from "@/components/sections/CtaSection";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { RelatedSection, type RelatedPage } from "@/components/sections/RelatedSection";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -206,8 +205,6 @@ export default async function SymptomDetailPage({
 
           {/* ── 関連ページ ── */}
           <RelatedSection pages={relatedPages} />
-
-          <CtaSection />
         </div>
       </div>
     </main>
