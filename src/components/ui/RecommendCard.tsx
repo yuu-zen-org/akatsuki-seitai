@@ -13,19 +13,19 @@ const CATEGORY_BADGE: Record<RecommendCategory, { bg: string; text: string }> = 
 function Photo({ rec }: { rec: Recommend }) {
   const initials = rec.name.replace(/\s/g, "").slice(0, 2);
   return (
-    <div className="mx-auto h-[88px] w-[88px]">
+    <div className="mx-auto h-[132px] w-[132px]">
       {rec.image ? (
-        <div className="relative h-[88px] w-[88px] overflow-hidden rounded-full shadow-[0_2px_12px_rgba(160,120,80,0.18)] ring-[3px] ring-white/90">
+        <div className="relative h-[132px] w-[132px] overflow-hidden rounded-full shadow-[0_2px_12px_rgba(160,120,80,0.18)] ring-[3px] ring-white/90">
           <Image
             src={rec.image}
             alt={rec.name}
             fill
             className="object-cover object-top"
-            sizes="88px"
+            sizes="132px"
           />
         </div>
       ) : (
-        <div className="grid h-[88px] w-[88px] place-items-center rounded-full bg-[#f0e8df] shadow-[0_2px_12px_rgba(160,120,80,0.18)] ring-[3px] ring-white/90">
+        <div className="grid h-[132px] w-[132px] place-items-center rounded-full bg-[#f0e8df] shadow-[0_2px_12px_rgba(160,120,80,0.18)] ring-[3px] ring-white/90">
           <span className="font-mincho text-xl text-[#c4956a]">{initials}</span>
         </div>
       )}

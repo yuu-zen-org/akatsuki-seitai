@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function PhilosophySection() {
   return (
-    <section className="py-20 md:py-28" id="philosophy">
+    <section className="py-8 md:py-20 lg:py-28" id="philosophy">
       <div data-reveal className="mx-auto grid w-[min(calc(100%-2rem),1260px)] gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-20">
 
         {/* タイトル部分 — スマホ・PC共通で最初 */}
@@ -68,8 +68,8 @@ export function PhilosophySection() {
           </aside>
         </div>
 
-        {/* テキスト — スマホのみ画像の下に表示 */}
-        <div className="order-3 space-y-1 text-sm leading-6 lg:hidden">
+        {/* テキスト — スマホのみ画像の下に表示（非表示） */}
+        <div className="order-3 space-y-1 text-sm leading-6 hidden">
           <p>その場だけ楽になるのではなく、</p>
           <p>不調の原因を一緒に見つけ、根本から整えていくこと。</p>
           <p>一人ひとりの体の状態や生活に寄り添い、</p>

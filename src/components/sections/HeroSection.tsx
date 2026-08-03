@@ -63,7 +63,7 @@ export function HeroSection() {
             根本から整えることで、再発しにくい身体づくりをサポートします。
           </p>
 
-          <div className="mt-5 flex flex-col gap-3 sm:flex-row anim-hero-5" id="reservation">
+          <div className="mt-5 hidden sm:flex sm:flex-row gap-3 anim-hero-5" id="reservation">
             <Link
               href="/contact"
               className="flex min-h-16 items-center justify-center gap-3 rounded-full bg-primary px-8 font-bold text-white"
@@ -92,6 +92,14 @@ export function HeroSection() {
               </svg>
               WEBご予約はこちら
             </Link>
+            <a
+              href={siteConfig.contact.lineUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex min-h-16 items-center justify-center rounded-full bg-[#06C755] px-8 font-bold text-white"
+            >
+              LINE予約
+            </a>
             <a
               href={siteConfig.contact.phoneHref}
               className="flex min-h-16 items-center justify-center gap-3 rounded-full bg-white/85 px-8 font-bold text-primary-dark"

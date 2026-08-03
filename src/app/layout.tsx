@@ -3,6 +3,7 @@ import { Noto_Sans_JP } from "next/font/google";
 import { siteConfig } from "@/lib/site-config";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { MobileCtaBar } from "@/components/layout/MobileCtaBar";
 import { ScrollRevealInit } from "@/components/ui/ScrollRevealInit";
 import { PageTransition } from "@/components/ui/PageTransition";
 import "./globals.css";
@@ -66,11 +67,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" className={notoSansJP.variable}>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased pb-[60px] lg:pb-0">
         <ScrollRevealInit />
         <Header />
         <PageTransition>{children}</PageTransition>
         <Footer />
+        <MobileCtaBar />
       </body>
     </html>
   );

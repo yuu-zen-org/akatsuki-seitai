@@ -1,5 +1,7 @@
 import type { BreadcrumbItem } from "@/types";
 import { Breadcrumb } from "./Breadcrumb";
+import { JsonLd } from "./JsonLd";
+import { generateBreadcrumbJsonLd } from "@/lib/json-ld";
 
 type Props = {
   en: string;
@@ -11,6 +13,7 @@ type Props = {
 export function PageHeader({ en, ja, description, breadcrumbs }: Props) {
   return (
     <div className="pt-6 pb-10">
+      <JsonLd data={generateBreadcrumbJsonLd(breadcrumbs)} />
       <Breadcrumb items={breadcrumbs} />
       <header className="ak-section-head mt-2">
         <p className="mb-[10px] text-[13px] font-bold tracking-[.18em] text-primary">{en}</p>

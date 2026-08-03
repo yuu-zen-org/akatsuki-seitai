@@ -14,6 +14,7 @@ import { VoiceSection } from "@/components/sections/VoiceSection";
 import { RecommendSection } from "@/components/sections/RecommendSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { AccessSection } from "@/components/sections/AccessSection";
+import { NewsSection } from "@/components/sections/NewsSection";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
         <BackgroundBlurs />
         <div className="relative z-[2]">
           <HeroSection />
+          <NewsSection />
           <PhilosophySection />
           <ProblemSection />
           <PriceSection />

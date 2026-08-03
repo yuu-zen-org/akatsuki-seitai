@@ -29,7 +29,44 @@ export function RecommendSection() {
           </p>
         </header>
 
-        <div className="grid gap-[18px] lg:grid-cols-5 max-[1100px]:grid-cols-2 max-[720px]:grid-cols-1">
+        {/* モバイル: CSS横スクロール */}
+        <div className="lg:hidden -mx-4 overflow-x-auto px-4 pb-4 scrollbar-hide">
+          <div className="flex w-max gap-4">
+            {featured.map((rec) => (
+              <article key={rec.id} className="ak-recommend-card w-[220px] flex-shrink-0">
+                <div className="relative mx-auto h-[120px] w-[120px] overflow-hidden rounded-full bg-[#f2e8df]">
+                  {rec.image ? (
+                    <Image
+                      src={rec.image}
+                      alt={rec.name}
+                      fill
+                      className="object-cover"
+                      sizes="120px"
+                    />
+                  ) : (
+                    <span className="absolute inset-0 flex items-center justify-center font-mincho text-2xl text-[#c4956a]">
+                      {rec.name.replace(/\s/g, "").slice(0, 2)}
+                    </span>
+                  )}
+                </div>
+                <p className="mt-3 text-center text-[11px] leading-[1.6] text-text-light">
+                  {rec.organization && <span className="block">{rec.organization}</span>}
+                  {rec.role}
+                </p>
+                <h3 className="mt-[6px] text-center font-mincho text-base">{rec.name} 様</h3>
+                <blockquote className="mt-3 line-clamp-4 text-xs leading-[1.9] text-text-light">
+                  {rec.summary}
+                </blockquote>
+                <p className="mt-3 text-[10px] text-text-light/60">
+                  ※個人の感想であり、成果や成功を保証するものではありません
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        {/* デスクトップ: グリッド */}
+        <div className="hidden lg:grid lg:grid-cols-5 gap-[18px]">
           {featured.map((rec) => (
             <article key={rec.id} className="ak-recommend-card">
               <div className="relative mx-auto h-[160px] w-[160px] overflow-hidden rounded-full bg-[#f2e8df]">

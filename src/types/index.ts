@@ -46,6 +46,7 @@ export interface Voice {
   id: string;
   age: string;
   gender: string;
+  initials?: string;
   symptom: string;
   title: string;
   content: string;
@@ -54,12 +55,19 @@ export interface Voice {
   youtubeId?: string;
 }
 
+export type SymptomCategory = "back" | "neck" | "lower" | "hand" | "other";
+
 export interface Symptom {
   id: string;
   slug: string;
   name: string;
   description: string;
+  category: SymptomCategory;
   imagePath?: string;
+  heroImage?: string;
+  subImage?: string;
+  checks?: string[];
+  approach?: string;
 }
 
 export interface FlowStep {

@@ -118,7 +118,7 @@ export function PriceSection() {
           </div>
         </div>
 
-        <div className="mt-6 flex flex-wrap justify-center gap-[30px] text-xs text-text-light">
+        <div className="mt-4 flex flex-col gap-1.5 text-xs text-text-light md:mt-6 md:flex-row md:flex-wrap md:justify-center md:gap-[30px]">
           {priceNotes.map((note) => (
             <span key={note}>{note}</span>
           ))}

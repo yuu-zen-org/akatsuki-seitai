@@ -57,7 +57,7 @@ export function FlowSection() {
           ※ 所要時間は初回で約60分、2回目以降は約30〜40分です。
         </p>
 
-        <div className="grid overflow-hidden rounded-[15px] border border-border-light bg-gradient-to-r from-[#f7eee5] to-[#f1e4d8] lg:grid-cols-[58%_42%] max-[720px]:grid-cols-1">
+        <div className="hidden lg:grid overflow-hidden rounded-[15px] border border-border-light bg-gradient-to-r from-[#f7eee5] to-[#f1e4d8] lg:grid-cols-[58%_42%]">
           <div className="flex items-center gap-[26px] p-8 lg:p-[32px_38px] max-[720px]:flex-col max-[720px]:items-start max-[720px]:p-[28px_20px]">
             <div className="grid h-[94px] w-[94px] flex-shrink-0 place-items-center rounded-full bg-white text-[42px] text-primary max-[720px]:h-[72px] max-[720px]:w-[72px]">
               ♡

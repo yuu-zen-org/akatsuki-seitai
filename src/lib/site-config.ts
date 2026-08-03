@@ -6,14 +6,14 @@ export const siteConfig = {
   description:
     "仙台市泉区の整体院。腰痛・肩こり・首の痛み・膝の痛み・股関節痛でお悩みの方へ。痛みの原因を丁寧に見極め、根本から整えることで再発しにくい身体づくりをサポートします。",
   url: "https://akatsuki-seitai.com",
-  ogImage: "/images/ogp.jpg",
+  ogImage: "/images/common/ogp.jpg",
   locale: "ja_JP",
 
   contact: {
     phone: "022-725-4546",
     phoneHref: "tel:0227254546",
     email: "info@akatsuki-seitai.com",
-    lineUrl: "https://lin.ee/XXXXXXXXX",
+    lineUrl: "https://page.line.me/369speqk",
     lineId: "@akatsuki-seitai",
   },
 
@@ -36,8 +36,8 @@ export const siteConfig = {
   },
 
   social: {
-    instagram: "",
-    line: "https://lin.ee/XXXXXXXXX",
+    instagram: "https://www.instagram.com/akatsuki.seitai5?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    line: "https://page.line.me/369speqk",
   },
 
   seo: {

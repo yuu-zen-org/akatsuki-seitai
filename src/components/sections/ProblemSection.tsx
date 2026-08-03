@@ -4,7 +4,7 @@ import { reasons } from "@/data/reasons";
 
 export function ProblemSection() {
   return (
-    <section className="pt-[40px] pb-20" id="reasons">
+    <section className="pt-4 md:pt-[40px] pb-20" id="reasons">
       <div data-reveal className="mx-auto w-[min(calc(100%-2rem),1260px)]">
         <div className="mb-10 flex items-center gap-4 before:h-px before:flex-1 before:bg-black/10 after:h-px after:flex-1 after:bg-black/10">
           <p className="flex items-center gap-3 text-center font-mincho tracking-[.12em]">
@@ -54,7 +54,7 @@ export function ProblemSection() {
           <b className="px-2 text-4xl font-normal text-primary">3</b> つの理由
         </h2>
 
-        <div className="grid gap-10 lg:grid-cols-3">
+        <div className="grid gap-4 lg:gap-10 lg:grid-cols-3">
           {reasons.map((reason) => (
             <article
               key={reason.number}

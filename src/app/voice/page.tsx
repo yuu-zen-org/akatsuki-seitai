@@ -1,27 +1,77 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import { BackgroundBlurs } from "@/components/ui/BackgroundBlurs";
 import { PageHeader } from "@/components/ui/PageHeader";
-import { YouTubePlayer } from "@/components/ui/YouTubePlayer";
-import { voices, youtubeVoices } from "@/data/voices";
-import { siteConfig } from "@/lib/site-config";
+import { VoiceTabs } from "@/components/sections/VoiceTabs";
+import { RelatedSection, type RelatedPage } from "@/components/sections/RelatedSection";
 
 export const metadata: Metadata = {
   title: "患者様の声",
   description:
     "楓月整体院に通われた患者様の声をご紹介します。腰痛・膝痛・頭痛・歩行困難など、さまざまな症状で根本改善を実感された方の動画インタビューと体験談を掲載しています。",
+  alternates: { canonical: "/voice/" },
 };
 
-function Stars({ rating }: { rating: number }) {
-  return (
-    <span aria-label={`${rating}点`} className="flex gap-0.5 text-primary">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <span key={i}>{i < rating ? "★" : "☆"}</span>
-      ))}
-    </span>
-  );
-}
+const relatedPages: RelatedPage[] = [
+  {
+    href: "/first",
+    en: "FLOW",
+    ja: "初めての方へ",
+    desc: "施術の流れ・当院の特徴・他院との違いをご紹介します。",
+    icon: (
+      <svg className="size-8" fill="none" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="13" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M11 16h10M17 12l4 4-4 4" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+      </svg>
+    ),
+  },
+  {
+    href: "/price",
+    en: "PRICE",
+    ja: "料金",
+    desc: "初回限定3,278円（税込）。明確な料金体系で安心してお越しいただけます。",
+    icon: (
+      <svg className="size-8" fill="none" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="13" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M10 20l3-8 3 5 2-3 3 6" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+      </svg>
+    ),
+  },
+  {
+    href: "/staff",
+    en: "STAFF",
+    ja: "スタッフ紹介",
+    desc: "施術を担当するスタッフの経歴・資格・想いをご紹介します。",
+    icon: (
+      <svg className="size-8" fill="none" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="12" r="5" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M6 26c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
+      </svg>
+    ),
+  },
+  {
+    href: "/recommend",
+    en: "RECOMMEND",
+    ja: "推薦の声",
+    desc: "医療・介護・施術・地域など各分野の専門家から寄せられた推薦をご紹介します。",
+    icon: (
+      <svg className="size-8" fill="none" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 5l2.764 8.51H27l-7.118 5.17 2.764 8.51L16 22.01l-6.646 5.18 2.764-8.51L6 13.51h8.236L16 5Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    href: "/access",
+    en: "ACCESS",
+    ja: "院情報・アクセス",
+    desc: "仙台市泉区泉中央。泉中央駅より徒歩6分。無料駐車場あり。",
+    icon: (
+      <svg className="size-8" fill="none" viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 3C11.582 3 8 6.582 8 11c0 7 8 18 8 18s8-11 8-18c0-4.418-3.582-8-8-8Z" stroke="currentColor" strokeWidth="1.5" />
+        <circle cx="16" cy="11" r="3" stroke="currentColor" strokeWidth="1.5" />
+      </svg>
+    ),
+  },
+];
 
 export default function VoicePage() {
   return (
@@ -39,115 +89,11 @@ export default function VoicePage() {
             ]}
           />
 
-          {/* 動画インタビュー */}
           <section className="pb-20">
-            <header className="ak-section-head">
-              <p className="mb-[10px] text-[13px] font-bold tracking-[.18em] text-primary">VIDEO INTERVIEW</p>
-              <h2 className="font-mincho text-[clamp(24px,2.8vw,38px)] font-normal leading-[1.45] tracking-[.14em]">
-                動画インタビュー
-              </h2>
-              <span className="ak-head-line" />
-              <p className="text-sm leading-8 text-text-light">
-                実際に通われた患者様のリアルな声をご覧ください。
-              </p>
-            </header>
-
-            <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {youtubeVoices.map((v) => (
-                <li key={v.id}>
-                  <article className="card-glass flex h-full flex-col rounded-2xl overflow-hidden">
-                    <YouTubePlayer youtubeId={v.youtubeId!} title={v.title} />
-                    <div className="p-5">
-                      <div className="mb-2 flex items-center gap-2 flex-wrap">
-                        <span className="rounded-full bg-primary-light px-3 py-0.5 text-[11px] font-bold text-primary-dark">
-                          {v.symptom}
-                        </span>
-                        <Stars rating={v.rating} />
-                      </div>
-                      <p className="mb-1 text-sm font-bold leading-[1.6] text-text">
-                        {v.title}
-                      </p>
-                      {v.content && (
-                        <p className="mt-2 text-xs leading-[1.9] text-text-light">
-                          {v.content}
-                        </p>
-                      )}
-                    </div>
-                  </article>
-                </li>
-              ))}
-            </ul>
+            <VoiceTabs />
           </section>
 
-          {/* テキストでのご感想 */}
-          <section className="pb-16">
-            <header className="ak-section-head">
-              <p className="mb-[10px] text-[13px] font-bold tracking-[.18em] text-primary">WRITTEN REVIEWS</p>
-              <h2 className="font-mincho text-[clamp(24px,2.8vw,38px)] font-normal leading-[1.45] tracking-[.14em]">
-                患者様のご感想
-              </h2>
-              <span className="ak-head-line" />
-            </header>
-
-            <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {voices.map((v) => (
-                <li key={v.id}>
-                  <article className="card-glass flex h-full flex-col rounded-2xl p-7">
-                    <div className="mb-4 flex items-center gap-4">
-                      {v.imagePath && (
-                        <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full bg-[#f0e8df]">
-                          <Image
-                            src={v.imagePath}
-                            alt=""
-                            fill
-                            className="object-cover"
-                            sizes="56px"
-                          />
-                        </div>
-                      )}
-                      <div>
-                        <p className="text-sm font-bold">
-                          {[v.age, v.gender].filter(Boolean).join("・")}
-                        </p>
-                        <p className="mt-0.5 text-xs text-text-muted">{v.symptom}</p>
-                        <Stars rating={v.rating} />
-                      </div>
-                    </div>
-                    <h2 className="mb-3 font-bold leading-[1.5]">{v.title}</h2>
-                    <p className="flex-1 text-sm leading-[1.9] text-text-light">
-                      {v.content}
-                    </p>
-                  </article>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          {/* CTA */}
-          <div className="pb-24">
-            <div className="rounded-2xl bg-gradient-to-r from-[#f4ece3] to-[#eee2d7] p-8 text-center md:p-12">
-              <p className="font-mincho text-xl leading-[1.8] md:text-2xl">
-                あなたも、根本改善を体験してみませんか？
-              </p>
-              <p className="mt-3 text-sm text-text-light">
-                初回限定コースで、まずはお気軽にご体験ください。
-              </p>
-              <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <Link
-                  href="/contact"
-                  className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full bg-primary px-8 font-bold text-white"
-                >
-                  WEBご予約はこちら
-                </Link>
-                <a
-                  href={siteConfig.contact.phoneHref}
-                  className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full border border-border-light bg-white/80 px-8 font-bold text-primary-dark"
-                >
-                  {siteConfig.contact.phone}
-                </a>
-              </div>
-            </div>
-          </div>
+          <RelatedSection pages={relatedPages} />
         </div>
       </div>
     </main>
