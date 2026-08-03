@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import type { Symptom, SymptomCategory } from "@/types";
 
 const CATEGORIES: { id: SymptomCategory | "all"; label: string }[] = [
@@ -13,10 +13,29 @@ const CATEGORIES: { id: SymptomCategory | "all"; label: string }[] = [
   { id: "other", label: "全身・その他" },
 ];
 
+const FADE_MS = 200;
+
 export function SymptomsGrid({ symptoms }: { symptoms: Symptom[] }) {
   const [active, setActive] = useState<SymptomCategory | "all">("all");
+  const [displayed, setDisplayed] = useState<SymptomCategory | "all">("all");
+  const [visible, setVisible] = useState(true);
 
-  const filtered = active === "all" ? symptoms : symptoms.filter((s) => s.category === active);
+  const handleSelect = useCallback(
+    (id: SymptomCategory | "all") => {
+      if (id === active) return;
+      setVisible(false);
+      setTimeout(() => {
+        setDisplayed(id);
+        setActive(id);
+        setVisible(true);
+      }, FADE_MS);
+    },
+    [active],
+  );
+
+  const filtered =
+    displayed === "all" ? symptoms : symptoms.filter((s) => s.category === displayed);
+
   const counts = CATEGORIES.map((c) => ({
     ...c,
     count: c.id === "all" ? symptoms.length : symptoms.filter((s) => s.category === c.id).length,
@@ -30,13 +49,15 @@ export function SymptomsGrid({ symptoms }: { symptoms: Symptom[] }) {
           {counts.map((c) => (
             <li key={c.id} className="border-b border-border-light">
               <button
-                onClick={() => setActive(c.id)}
+                onClick={() => handleSelect(c.id)}
                 className="flex w-full items-center justify-between py-3.5 text-left transition-colors hover:text-primary"
               >
                 <span
                   className={[
                     "text-sm",
-                    active === c.id ? "font-bold text-primary-dark underline underline-offset-4" : "text-text-light",
+                    active === c.id
+                      ? "font-bold text-primary-dark underline underline-offset-4"
+                      : "text-text-light",
                   ].join(" ")}
                 >
                   {c.label}
@@ -49,7 +70,14 @@ export function SymptomsGrid({ symptoms }: { symptoms: Symptom[] }) {
       </aside>
 
       {/* グリッド */}
-      <div className="min-w-0 flex-1">
+      <div
+        className="min-w-0 flex-1"
+        style={{
+          opacity: visible ? 1 : 0,
+          transform: visible ? "translateY(0)" : "translateY(6px)",
+          transition: `opacity ${FADE_MS}ms ease, transform ${FADE_MS}ms ease`,
+        }}
+      >
         <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filtered.map((s) => (
             <li key={s.id}>

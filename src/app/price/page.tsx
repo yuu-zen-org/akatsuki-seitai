@@ -99,7 +99,7 @@ export default function PricePage() {
         </div>
 
         {/* ── 初回キャンペーン ── 左：テキスト 右：写真 */}
-        <section className="pb-24">
+        <section className="py-10 md:py-16 pb-16 md:pb-24">
           <div className="mx-auto w-[min(calc(100%-2rem),1260px)]">
             <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
               <div>
@@ -169,8 +169,8 @@ export default function PricePage() {
                 </div>
               </div>
 
-              {/* 写真 1 */}
-              <div className="relative h-[420px] overflow-hidden rounded-[2rem] lg:h-[520px]">
+              {/* 写真 1 — スマホ非表示 */}
+              <div className="hidden lg:block relative h-[420px] overflow-hidden rounded-[2rem] lg:h-[520px]">
                 <Image
                   src="/images/top/sejutsu-01.jpg"
                   alt="施術の様子"
@@ -224,9 +224,9 @@ export default function PricePage() {
         </section>
 
 {/* ── お支払い ── */}
-        <section className="pb-20">
+        <section className="py-12 md:pb-20">
           <div className="mx-auto w-[min(calc(100%-2rem),1260px)]">
-            <div className="border-t border-border-light pt-14">
+            <div className="border-t border-border-light pt-10 md:pt-14">
               <p className="mb-10 text-[11px] font-bold tracking-[.22em] text-text-muted">PAYMENT</p>
 
               <div className="grid gap-10 sm:grid-cols-3">

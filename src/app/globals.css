@@ -130,6 +130,17 @@ body {
   animation: ellipse-morph 20s ease-in-out infinite;
 }
 
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 24s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
 @keyframes ellipse-morph {
   0%, 100% {
     border-radius: 58% 42% 47% 53% / 31% 29% 71% 69%;

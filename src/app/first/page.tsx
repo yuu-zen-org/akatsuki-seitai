@@ -141,11 +141,8 @@ export default function FirstPage() {
         </div>
 
         {/* タイトル下・施術写真3枚 */}
-        <section className="pb-16">
+        <section className="pb-8 md:pb-16">
           <div className="mx-auto w-[min(calc(100%-2rem),1260px)]">
-            <p className="mb-8 text-center text-[11px] font-bold tracking-[.22em] text-text-muted">
-              TREATMENT
-            </p>
             <div className="grid grid-cols-3 gap-3 md:gap-5">
               <div className="relative aspect-[3/4] overflow-hidden rounded-2xl">
                 <Image
@@ -219,7 +216,20 @@ export default function FirstPage() {
               </h2>
               <span className="ak-head-line" />
             </header>
-            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {/* モバイル: 横スクロール */}
+            <div className="md:hidden -mx-4 overflow-x-auto px-4 pb-4 scrollbar-hide">
+              <div className="flex w-max gap-4">
+                {features.map((f) => (
+                  <div key={f.num} className="card-glass w-[260px] flex-shrink-0 rounded-2xl p-5">
+                    <p className="mb-2 font-bold text-primary/40 text-4xl leading-none font-mincho">{f.num}</p>
+                    <h3 className="mb-3 font-bold leading-[1.5] text-[14px]">{f.title}</h3>
+                    <p className="text-sm leading-[1.9] text-text-light">{f.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* デスクトップ: グリッド */}
+            <div className="hidden md:grid md:gap-5 md:grid-cols-2 lg:grid-cols-3">
               {features.map((f) => (
                 <div key={f.num} className="card-glass rounded-2xl p-6">
                   <p className="mb-2 font-bold text-primary/40 text-4xl leading-none font-mincho">{f.num}</p>
