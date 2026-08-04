@@ -136,7 +136,7 @@ export function HeroSection() {
                   strokeWidth="2"
                 />
               </svg>
-              <span>電話予約　{siteConfig.contact.phone}</span>
+              <span className="text-center leading-snug">電話予約<br /><b>{siteConfig.contact.phone}</b></span>
             </a>
           </div>
         </div>
