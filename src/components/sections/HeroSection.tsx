@@ -82,14 +82,14 @@ export function HeroSection() {
             根本から整えることで、再発しにくい身体づくりをサポートします。
           </p>
 
-          <div className="mt-5 hidden sm:flex sm:flex-row gap-3 anim-hero-5" id="reservation">
+          <div className="mt-5 hidden sm:flex sm:flex-row gap-2 lg:gap-3 anim-hero-5" id="reservation">
             <Link
               href="/contact"
-              className="flex min-h-16 items-center justify-center gap-3 rounded-full bg-primary px-8 font-bold text-white"
+              className="flex min-h-14 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-primary px-5 text-sm font-bold text-white lg:min-h-16 lg:gap-3 lg:px-8 lg:text-base"
             >
               <svg
                 aria-hidden="true"
-                className="size-7"
+                className="size-5 shrink-0 lg:size-7"
                 fill="none"
                 viewBox="0 0 32 32"
               >
@@ -115,17 +115,17 @@ export function HeroSection() {
               href={siteConfig.contact.lineUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex min-h-16 items-center justify-center rounded-full bg-[#06C755] px-8 font-bold text-white"
+              className="flex min-h-14 items-center justify-center whitespace-nowrap rounded-full bg-[#06C755] px-5 text-sm font-bold text-white lg:min-h-16 lg:px-8 lg:text-base"
             >
               LINE予約
             </a>
             <a
               href={siteConfig.contact.phoneHref}
-              className="flex min-h-16 items-center justify-center gap-3 rounded-full bg-white/85 px-8 font-bold text-primary-dark"
+              className="flex min-h-14 items-center justify-center gap-2 whitespace-nowrap rounded-full bg-white/85 px-5 text-sm font-bold text-primary-dark lg:min-h-16 lg:gap-3 lg:px-8 lg:text-base"
             >
               <svg
                 aria-hidden="true"
-                className="size-7"
+                className="size-5 shrink-0 lg:size-7"
                 fill="none"
                 viewBox="0 0 32 32"
               >
@@ -136,11 +136,7 @@ export function HeroSection() {
                   strokeWidth="2"
                 />
               </svg>
-              <span>
-                電話予約はこちら
-                <br />
-                <b>{siteConfig.contact.phone}</b>
-              </span>
+              <span>電話予約　{siteConfig.contact.phone}</span>
             </a>
           </div>
         </div>
