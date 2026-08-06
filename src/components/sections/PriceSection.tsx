@@ -52,7 +52,7 @@ export function PriceSection() {
                   <small className="text-sm font-bold text-primary">円(税込)</small>
                 </div>
                 <p className="mt-1 text-xs text-text-light">（{firstCourse.note}）</p>
-                <p className="text-xs text-text-light">※2回目以降は通常施術料6,900円</p>
+                <p className="text-xs text-text-light">※2回目以降は通常施術料12,300円</p>
               </div>
               <p className="inline-block rounded-full bg-primary/20 px-5 py-1.5 text-sm font-bold text-primary">
                 1日2名様限定
@@ -60,24 +60,54 @@ export function PriceSection() {
             </div>
           </article>
 
-          {/* 右: 通常コース・回数券（2段） */}
+          {/* 右: 通常コース・プリペードカード（2段） */}
           <div className="grid grid-cols-1 gap-[14px]">
-            {otherCourses.map((course) => (
-              <article key={course.id} className="ak-price-card !p-4">
-                <h3 className="rounded bg-[#f2e8df] px-2 py-2 font-mincho text-[22px]">
-                  {course.name}
-                </h3>
-                <p className="whitespace-pre-line border-b border-border-light py-1.5 text-sm leading-[1.6] text-text-light">
-                  {course.description}
-                </p>
-                <div className="ak-price-main">
-                  <strong className="font-mincho text-[42px] font-normal leading-none">
-                    {course.price}
-                  </strong>
-                  <small className="text-xs">円（税込）</small>
-                </div>
-              </article>
-            ))}
+            {otherCourses.map((course) =>
+              course.id === "ticket" ? (
+                <article key={course.id} className="ak-price-card !p-4">
+                  <h3 className="rounded bg-[#f2e8df] px-2 py-2 font-mincho text-[22px]">
+                    {course.name}
+                  </h3>
+                  <p className="border-b border-border-light py-1.5 text-sm leading-[1.6] text-text-light">
+                    {course.description}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {[
+                      { label: "Suica",      bg: "#00b050", color: "#fff" },
+                      { label: "PASMO",      bg: "#e2007a", color: "#fff" },
+                      { label: "nanaco",     bg: "#f5a800", color: "#fff" },
+                      { label: "WAON",       bg: "#00a0b0", color: "#fff" },
+                      { label: "楽天Edy",    bg: "#bf0000", color: "#fff" },
+                      { label: "iD",         bg: "#1a1a6e", color: "#fff" },
+                      { label: "QUICPay",    bg: "#e07000", color: "#fff" },
+                    ].map(({ label, bg, color }) => (
+                      <span
+                        key={label}
+                        className="rounded px-3 py-1.5 text-[13px] font-bold tracking-wide"
+                        style={{ background: bg, color }}
+                      >
+                        {label}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              ) : (
+                <article key={course.id} className="ak-price-card !p-4">
+                  <h3 className="rounded bg-[#f2e8df] px-2 py-2 font-mincho text-[22px]">
+                    {course.name}
+                  </h3>
+                  <p className="whitespace-pre-line border-b border-border-light py-1.5 text-sm leading-[1.6] text-text-light">
+                    {course.description}
+                  </p>
+                  <div className="ak-price-main">
+                    <strong className="font-mincho text-[42px] font-normal leading-none">
+                      {course.price}
+                    </strong>
+                    <small className="text-xs">円（税込）</small>
+                  </div>
+                </article>
+              )
+            )}
           </div>
         </div>
 

@@ -24,7 +24,7 @@ export async function generateMetadata({
   if (!s) return {};
   return {
     title: `${s.name}の改善`,
-    description: `${s.description}仙台市泉区の楓月整体院にお任せください。`,
+    description: `${s.description}仙台市泉区の整体院楓月-Akatsuki- 泉中央院にお任せください。`,
     alternates: { canonical: `${siteConfig.url}/symptoms/${slug}/` },
   };
 }
@@ -34,7 +34,7 @@ const relatedPages: RelatedPage[] = [
     href: "/price",
     en: "PRICE",
     ja: "料金",
-    desc: "初回限定キャンペーン3,278円。料金・施術時間の詳細はこちら。",
+    desc: "初回限定キャンペーン2,980円。料金・施術時間の詳細はこちら。",
     icon: (
       <svg className="size-8" fill="none" viewBox="0 0 32 32" aria-hidden="true">
         <circle cx="16" cy="16" r="13" stroke="currentColor" strokeWidth="1.5" />
@@ -182,7 +182,7 @@ export default async function SymptomDetailPage({
               <div>
                 <p className="mb-4 text-[11px] font-bold tracking-[.22em] text-primary">OUR APPROACH</p>
                 <h2 className="mb-6 font-mincho text-[clamp(20px,2.5vw,30px)] leading-[1.55] tracking-[.06em]">
-                  楓月整体院の<br />アプローチ
+                  整体院楓月-Akatsuki- 泉中央院の<br />アプローチ
                 </h2>
                 <p className="text-[14px] leading-[2.2] text-text-light">{s.approach}</p>
 

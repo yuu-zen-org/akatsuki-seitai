@@ -47,7 +47,7 @@ export async function sendContact(
   const to = process.env.RESEND_TO ?? "";
 
   const bodyToClinic = `
-【楓月整体院 お問い合わせ】
+【整体院楓月-Akatsuki- 泉中央院 お問い合わせ】
 
 ■ お名前：${name}
 ■ 電話番号：${phone}
@@ -63,7 +63,7 @@ ${message || "なし"}
 ${name} 様
 
 この度はお問い合わせいただきありがとうございます。
-楓月整体院（泉中央院）です。
+整体院楓月-Akatsuki- 泉中央院（泉中央院）です。
 
 内容を確認の上、2営業日以内にご連絡いたします。
 お急ぎの場合はお電話（022-725-4546）にてご連絡ください。
@@ -90,13 +90,13 @@ TEL: 022-725-4546
       resend.emails.send({
         from,
         to,
-        subject: `【楓月整体院】お問い合わせ：${name} 様`,
+        subject: `【整体院楓月-Akatsuki- 泉中央院】お問い合わせ：${name} 様`,
         text: bodyToClinic,
       }),
       resend.emails.send({
         from,
         to: email,
-        subject: "【楓月整体院】お問い合わせを受け付けました",
+        subject: "【整体院楓月-Akatsuki- 泉中央院】お問い合わせを受け付けました",
         text: bodyToUser,
       }),
     ]);

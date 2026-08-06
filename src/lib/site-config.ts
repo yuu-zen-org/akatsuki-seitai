@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "楓月整体院",
+  name: "整体院楓月-Akatsuki- 泉中央院",
   nameKana: "ふうげつせいたいいん",
   nameRomaji: "akatsuki",
   branch: "泉中央院",

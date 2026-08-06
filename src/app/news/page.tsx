@@ -6,7 +6,7 @@ import { news } from "@/data/news";
 export const metadata: Metadata = {
   title: "お知らせ",
   description:
-    "楓月整体院からのお知らせ。休診情報・キャンペーン・新着情報をお届けします。",
+    "整体院楓月-Akatsuki- 泉中央院からのお知らせ。休診情報・キャンペーン・新着情報をお届けします。",
 };
 
 const CATEGORY_COLOR: Record<string, { bg: string; text: string }> = {

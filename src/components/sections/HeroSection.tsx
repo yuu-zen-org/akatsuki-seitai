@@ -73,7 +73,7 @@ export function HeroSection() {
           </h1>
           {/* スマホ用SEOテキスト（非表示） */}
           <h1 className="sr-only lg:hidden">
-            楓月整体院 ― その痛みを、その場しのぎで終わらせない。
+            整体院楓月-Akatsuki- 泉中央院 ― その痛みを、その場しのぎで終わらせない。
           </h1>
 
           <p className="mt-4 hidden text-base leading-8 text-text-muted lg:block anim-hero-4">

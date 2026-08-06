@@ -50,7 +50,7 @@ export function PhilosophySection() {
           <div className="relative h-[380px] overflow-hidden rounded-[4rem] shadow-xl md:h-[460px]">
             <Image
               src="/images/top/philosophy.jpg"
-              alt="楓月整体院の施術風景"
+              alt="整体院楓月-Akatsuki- 泉中央院の施術風景"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"

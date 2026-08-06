@@ -13,7 +13,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "料金",
   description:
-    "楓月整体院の料金案内。初回限定キャンペーン3,278円（税込）。仙台市泉区で腰痛・肩こり・首の痛みにお悩みの方はお気軽にご相談ください。",
+    "整体院楓月-Akatsuki- 泉中央院の料金案内。初回限定キャンペーン2,980円（税込）。仙台市泉区で腰痛・肩こり・首の痛みにお悩みの方はお気軽にご相談ください。",
   alternates: { canonical: "/price/" },
 };
 
@@ -111,13 +111,10 @@ export default function PricePage() {
                 </p>
                 <div className="mt-2 flex items-end gap-3 flex-wrap">
                   <p className="font-mincho text-[clamp(64px,10vw,96px)] leading-none tracking-tight text-primary-dark">
-                    3,278
+                    2,980
                   </p>
                   <p className="mb-3 font-mincho text-2xl text-text-light">円</p>
                   <p className="mb-3 text-sm text-text-muted">税込</p>
-                  <span className="mb-3 inline-block rounded-full bg-red-500 px-3 py-1 text-sm font-bold text-white">
-                    52% OFF
-                  </span>
                 </div>
 
                 <div className="mt-6 space-y-3 border-t border-border-light pt-6">
@@ -127,11 +124,11 @@ export default function PricePage() {
                   </div>
                   <div className="flex justify-between text-sm">
                     <span className="text-text-light">施術料（通常価格）</span>
-                    <span className="font-bold">6,900円</span>
+                    <span className="font-bold">12,300円</span>
                   </div>
                   <div className="flex justify-between border-t border-border-light pt-3 text-sm">
                     <span className="font-bold text-primary">初回キャンペーン合計</span>
-                    <span className="font-bold text-primary">3,278円（税込）</span>
+                    <span className="font-bold text-primary">2,980円（税込）</span>
                   </div>
                 </div>
 
@@ -203,7 +200,7 @@ export default function PricePage() {
               <p className="text-[11px] font-bold tracking-[.22em] text-primary/80">2回目以降 通常料金</p>
               <div className="mt-3 flex items-end gap-2">
                 <p className="font-mincho text-[clamp(56px,8vw,80px)] leading-none text-white">
-                  6,900
+                  12,300
                 </p>
                 <p className="mb-2 font-mincho text-2xl text-white/70">円</p>
                 <p className="mb-2 text-sm text-white/50">税込</p>

@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 
 export const metadata: Metadata = {
   title: "プライバシーポリシー",
-  description: "楓月整体院のプライバシーポリシー。個人情報の取り扱いについて。",
+  description: "整体院楓月-Akatsuki- 泉中央院のプライバシーポリシー。個人情報の取り扱いについて。",
 };
 
 export default function PrivacyPage() {

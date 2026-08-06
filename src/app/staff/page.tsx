@@ -7,7 +7,7 @@ import { RelatedSection, type RelatedPage } from "@/components/sections/RelatedS
 export const metadata: Metadata = {
   title: "スタッフ紹介",
   description:
-    "楓月整体院のスタッフ紹介。代表・福田孝裕、院長・岡本千奈津、整体師・清水陸矢。業界経験10年以上・累計2万件超の実績を持つスタッフが丁寧に施術いたします。",
+    "整体院楓月-Akatsuki- 泉中央院のスタッフ紹介。代表・福田孝裕、院長・岡本千奈津、整体師・清水陸矢。業界経験10年以上・累計2万件超の実績を持つスタッフが丁寧に施術いたします。",
   alternates: { canonical: "/staff/" },
 };
 

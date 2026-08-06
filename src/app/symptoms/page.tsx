@@ -8,7 +8,7 @@ import { symptoms } from "@/data/symptoms";
 export const metadata: Metadata = {
   title: "対応症状一覧",
   description:
-    "楓月整体院が対応する症状一覧。腰痛・首の痛み・肩こり・膝の痛み・股関節痛など、根本から改善を目指します。",
+    "整体院楓月-Akatsuki- 泉中央院が対応する症状一覧。腰痛・首の痛み・肩こり・膝の痛み・股関節痛など、根本から改善を目指します。",
   alternates: { canonical: "/symptoms/" },
 };
 

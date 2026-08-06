@@ -16,7 +16,7 @@ export function AccessSection() {
         <div className="card-glass grid gap-8 rounded-[2rem] p-6 md:p-9 lg:grid-cols-[.9fr_1.1fr]">
           <div>
             <h3 className="font-mincho text-3xl">
-              {siteConfig.name} {siteConfig.branch}
+              {siteConfig.name}
             </h3>
             <dl className="mt-6 divide-y divide-black/10 border-y border-black/10">
               <div className="grid gap-2 py-4 sm:grid-cols-[7rem_1fr]">

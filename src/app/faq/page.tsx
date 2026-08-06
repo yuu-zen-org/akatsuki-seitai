@@ -10,7 +10,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 export const metadata: Metadata = {
   title: "よくあるご質問",
   description:
-    "楓月整体院のよくある質問。予約方法・施術内容・料金・服装など、初めての方が気になるポイントをまとめました。",
+    "整体院楓月-Akatsuki- 泉中央院のよくある質問。予約方法・施術内容・料金・服装など、初めての方が気になるポイントをまとめました。",
   alternates: { canonical: "/faq/" },
 };
 

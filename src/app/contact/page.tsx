@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "ご予約・お問い合わせ",
   description:
-    "楓月整体院のご予約・お問い合わせ。WEBフォームまたはお電話にてご予約いただけます。仙台市泉区。",
+    "整体院楓月-Akatsuki- 泉中央院のご予約・お問い合わせ。WEBフォームまたはお電話にてご予約いただけます。仙台市泉区。",
   alternates: { canonical: "/contact/" },
 };
 
@@ -99,7 +99,7 @@ export default function ContactPage() {
                       allowFullScreen
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
-                      title="楓月整体院 泉中央院 地図"
+                      title="整体院楓月-Akatsuki- 泉中央院 泉中央院 地図"
                     />
                   </div>
 

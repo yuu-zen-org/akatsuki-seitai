@@ -5,20 +5,20 @@ export const priceCourses: PriceCourse[] = [
     id: "first",
     name: "初回限定コース",
     description: "初めての方、限定でお得に受けられるコース",
-    price: "3,278",
-    note: "通常料金→初診料2,000円＋施術料6,900円",
+    price: "2,980",
+    note: "通常料金→初診料2,000円＋施術料12,300円",
   },
   {
     id: "regular",
-    name: "通常コース",
+    name: "根本改善アドバンスコース",
     description: "通常施術料",
-    price: "6,900",
+    price: "12,300",
   },
   {
     id: "ticket",
-    name: "お得な回数券",
-    description: "10回通常料金◯◯円",
-    price: "◯◯",
+    name: "プリペードカード使用可能",
+    description: "各種プリペードカードがご利用いただけます。",
+    price: "",
   },
 ];
 
