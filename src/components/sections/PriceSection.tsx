@@ -60,7 +60,7 @@ export function PriceSection() {
             </div>
           </article>
 
-          {/* 右: 通常コース・プリペードカード（2段） */}
+          {/* 右: 通常コース・プリペイドカード（2段） */}
           <div className="grid grid-cols-1 gap-[14px]">
             {otherCourses.map((course) =>
               course.id === "ticket" ? (

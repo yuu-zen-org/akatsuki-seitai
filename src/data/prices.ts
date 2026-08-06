@@ -16,8 +16,8 @@ export const priceCourses: PriceCourse[] = [
   },
   {
     id: "ticket",
-    name: "プリペードカード使用可能",
-    description: "各種プリペードカードがご利用いただけます。",
+    name: "プリペイドカード使用可能",
+    description: "各種プリペイドカードがご利用いただけます。",
     price: "",
   },
 ];
