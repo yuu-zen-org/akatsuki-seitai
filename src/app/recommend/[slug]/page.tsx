@@ -33,7 +33,7 @@ const relatedPages: RelatedPage[] = [
     href: "/price",
     en: "PRICE",
     ja: "料金",
-    desc: "初回限定3,278円（税込）。明確な料金体系で安心してお越しいただけます。",
+    desc: "初回限定2,980円（税込）。明確な料金体系で安心してお越しいただけます。",
     icon: (
       <svg className="size-8" fill="none" viewBox="0 0 32 32" aria-hidden="true">
         <circle cx="16" cy="16" r="13" stroke="currentColor" strokeWidth="1.5" />

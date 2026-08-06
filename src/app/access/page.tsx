@@ -92,7 +92,7 @@ export default function AccessPage() {
                   </div>
                   <div className="grid gap-2 py-4 sm:grid-cols-[8rem_1fr]">
                     <dt className="font-bold">価格帯</dt>
-                    <dd className="text-text-light">平均3,278円〜6,900円前後</dd>
+                    <dd className="text-text-light">初回2,980円〜通常12,300円（税込）</dd>
                   </div>
                   <div className="grid gap-2 py-4 sm:grid-cols-[8rem_1fr]">
                     <dt className="font-bold">URL</dt>

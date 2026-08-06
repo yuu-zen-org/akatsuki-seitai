@@ -8,7 +8,7 @@ export function Footer() {
       <div className="mx-auto grid w-[min(calc(100%-2rem),1260px)] gap-12 py-16 md:grid-cols-2">
         <div>
           <Link href="/" className="font-mincho text-3xl tracking-[.08em]">
-            整体院 楓月
+            整体院楓月<span className="text-primary">-Akatsuki-</span>
             <span className="ml-2 text-lg">泉中央院</span>
           </Link>
           <p className="mt-6 max-w-md text-sm leading-8 text-white/70">
@@ -66,7 +66,7 @@ export function Footer() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex min-h-20 w-[min(calc(100%-2rem),1260px)] flex-col justify-center gap-3 py-5 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 整体院 楓月. All Rights Reserved.</p>
+          <p>© 整体院楓月-Akatsuki- 泉中央院. All Rights Reserved.</p>
           <Link href="/privacy" className="hover:text-white/80 transition-colors">
             プライバシーポリシー
           </Link>
