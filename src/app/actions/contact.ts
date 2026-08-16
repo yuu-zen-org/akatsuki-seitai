@@ -44,7 +44,7 @@ export async function sendContact(
 
   const resend = new Resend(process.env.RESEND_API_KEY);
   const from = process.env.RESEND_FROM ?? "onboarding@resend.dev";
-  const to = process.env.RESEND_TO ?? "";
+  const to = (process.env.RESEND_TO ?? "").split(",").map((s) => s.trim()).filter(Boolean);
 
   const bodyToClinic = `
 【整体院楓月-Akatsuki- 泉中央院 お問い合わせ】
