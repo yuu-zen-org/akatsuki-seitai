@@ -1,3 +1,5 @@
+export const maxDuration = 30;
+
 import type { Metadata } from "next";
 import { BackgroundBlurs } from "@/components/ui/BackgroundBlurs";
 import { PageHeader } from "@/components/ui/PageHeader";
