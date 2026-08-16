@@ -24,12 +24,17 @@ export async function sendContact(
   _prev: ContactState,
   formData: FormData
 ): Promise<ContactState> {
+  const date1val = formData.get("date1") as string;
+  const time1val = formData.get("time1") as string;
+  const date2val = (formData.get("date2") as string) ?? "";
+  const time2val = (formData.get("time2") as string) ?? "";
+
   const raw = {
     name: formData.get("name") as string,
     phone: formData.get("phone") as string,
     email: formData.get("email") as string,
-    date1: formData.get("date1") as string,
-    date2: (formData.get("date2") as string) ?? "",
+    date1: date1val ? `${date1val} ${time1val}`.trim() : "",
+    date2: date2val ? `${date2val} ${time2val}`.trim() : "",
     symptom: (formData.get("symptom") as string) ?? "",
     message: (formData.get("message") as string) ?? "",
     honeypot: (formData.get("honeypot") as string) ?? "",
@@ -63,7 +68,7 @@ ${message || "なし"}
 ${name} 様
 
 この度はお問い合わせいただきありがとうございます。
-整体院楓月-Akatsuki- 泉中央院（泉中央院）です。
+整体院楓月-Akatsuki- 泉中央院です。
 
 内容を確認の上、2営業日以内にご連絡いたします。
 お急ぎの場合はお電話（022-725-4546）にてご連絡ください。

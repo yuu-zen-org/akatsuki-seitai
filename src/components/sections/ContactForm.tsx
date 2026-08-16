@@ -3,6 +3,15 @@
 import { useActionState } from "react";
 import { sendContact, type ContactState } from "@/app/actions/contact";
 
+const TIME_OPTIONS = (() => {
+  const opts: string[] = [];
+  for (let h = 10; h <= 18; h++) {
+    opts.push(`${h}:00`);
+    if (h < 18) opts.push(`${h}:30`);
+  }
+  return opts;
+})();
+
 const SYMPTOMS = [
   "腰痛・ぎっくり腰",
   "肩こり・首の痛み",
@@ -85,31 +94,49 @@ export function ContactForm() {
       </div>
 
       {/* ご希望日時 */}
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="space-y-5">
         <div>
-          <label className="block text-sm font-bold" htmlFor="date1">
+          <p className="block text-sm font-bold">
             第1希望日時 <span className="ml-1 text-[11px] font-normal text-primary">必須</span>
-          </label>
-          <input
-            id="date1"
-            name="date1"
-            type="text"
-            placeholder="例：6月10日 午前"
-            className="mt-2 w-full rounded-xl border border-border-light bg-white px-4 py-3 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary"
-          />
+          </p>
+          <div className="mt-2 grid grid-cols-2 gap-2">
+            <input
+              id="date1"
+              name="date1"
+              type="date"
+              className="w-full rounded-xl border border-border-light bg-white px-4 py-3 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+            />
+            <select
+              name="time1"
+              className="w-full rounded-xl border border-border-light bg-white px-4 py-3 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+            >
+              <option value="">時間を選択</option>
+              {TIME_OPTIONS.map((t) => (
+                <option key={t} value={t}>{t}</option>
+              ))}
+            </select>
+          </div>
           <FieldError errors={state.errors?.date1} />
         </div>
         <div>
-          <label className="block text-sm font-bold" htmlFor="date2">
-            第2希望日時
-          </label>
-          <input
-            id="date2"
-            name="date2"
-            type="text"
-            placeholder="例：6月12日 午後"
-            className="mt-2 w-full rounded-xl border border-border-light bg-white px-4 py-3 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary"
-          />
+          <p className="block text-sm font-bold">第2希望日時</p>
+          <div className="mt-2 grid grid-cols-2 gap-2">
+            <input
+              id="date2"
+              name="date2"
+              type="date"
+              className="w-full rounded-xl border border-border-light bg-white px-4 py-3 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+            />
+            <select
+              name="time2"
+              className="w-full rounded-xl border border-border-light bg-white px-4 py-3 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+            >
+              <option value="">時間を選択</option>
+              {TIME_OPTIONS.map((t) => (
+                <option key={t} value={t}>{t}</option>
+              ))}
+            </select>
+          </div>
         </div>
       </div>
 

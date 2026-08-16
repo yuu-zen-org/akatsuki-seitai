@@ -12,7 +12,7 @@ export default function ThanksPage() {
   return (
     <main className="page-bg">
       <BackgroundBlurs />
-      <div className="relative z-[2] flex min-h-[70vh] items-center">
+      <div className="relative z-[2] flex items-center">
         <div className="mx-auto w-[min(calc(100%-2rem),600px)] py-20 text-center">
           <p className="font-mincho text-5xl text-primary/30" aria-hidden="true">✦</p>
 
