@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "よくあるご質問",
   description:
     "整体院楓月-Akatsuki- 泉中央院のよくある質問。予約方法・施術内容・料金・服装など、初めての方が気になるポイントをまとめました。",
-  alternates: { canonical: "/faq/" },
+  alternates: { canonical: "/faq" },
 };
 
 const categories = ["予約", "施術", "来院", "アクセス", "料金"] as const;

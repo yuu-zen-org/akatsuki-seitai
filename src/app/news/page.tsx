@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "お知らせ",
   description:
     "整体院楓月-Akatsuki- 泉中央院からのお知らせ。休診情報・キャンペーン・新着情報をお届けします。",
+  alternates: { canonical: "/news" },
 };
 
 const CATEGORY_COLOR: Record<string, { bg: string; text: string }> = {

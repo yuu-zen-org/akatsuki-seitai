@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "患者様の声",
   description:
     "整体院楓月-Akatsuki- 泉中央院に通われた患者様の声をご紹介します。腰痛・膝痛・頭痛・歩行困難など、さまざまな症状で根本改善を実感された方の動画インタビューと体験談を掲載しています。",
-  alternates: { canonical: "/voice/" },
+  alternates: { canonical: "/voice" },
 };
 
 const relatedPages: RelatedPage[] = [

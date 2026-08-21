@@ -5,7 +5,7 @@ export const siteConfig = {
   branch: "泉中央院",
   description:
     "仙台市泉区の整体院。腰痛・肩こり・首の痛み・膝の痛み・股関節痛でお悩みの方へ。痛みの原因を丁寧に見極め、根本から整えることで再発しにくい身体づくりをサポートします。",
-  url: "https://akatsuki-seitai-sendai.com",
+  url: "https://www.akatsuki-seitai-sendai.com",
   ogImage: "/images/common/ogp.jpg",
   locale: "ja_JP",
 

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "医師・理学療法士・同業施術家・地域事業者など、さまざまな分野の方から寄せられた整体院楓月-Akatsuki- 泉中央院への推薦をご紹介します。",
   alternates: {
-    canonical: `${siteConfig.url}/recommend/`,
+    canonical: `${siteConfig.url}/recommend`,
   },
 };
 

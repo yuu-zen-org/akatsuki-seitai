@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "ご予約・お問い合わせ",
   description:
     "整体院楓月-Akatsuki- 泉中央院のご予約・お問い合わせ。WEBフォームまたはお電話にてご予約いただけます。仙台市泉区。",
-  alternates: { canonical: "/contact/" },
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

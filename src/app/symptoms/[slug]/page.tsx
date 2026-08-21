@@ -25,7 +25,7 @@ export async function generateMetadata({
   return {
     title: `${s.name}の改善`,
     description: `${s.description}仙台市泉区の整体院楓月-Akatsuki- 泉中央院にお任せください。`,
-    alternates: { canonical: `${siteConfig.url}/symptoms/${slug}/` },
+    alternates: { canonical: `${siteConfig.url}/symptoms/${slug}` },
   };
 }
 

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "初めての方へ",
   description:
     "整体院楓月-Akatsuki- 泉中央院が初めての方へ。施術の流れ・院の特徴・他院との違いをご紹介します。仙台市泉区で腰痛・肩こり・首の痛みにお悩みの方はお気軽にご相談ください。",
-  alternates: { canonical: "/first/" },
+  alternates: { canonical: "/first" },
 };
 
 const relatedPages: RelatedPage[] = [

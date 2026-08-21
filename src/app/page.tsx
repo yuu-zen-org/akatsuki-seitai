@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   generateLocalBusinessJsonLd,
   generateOrganizationJsonLd,
@@ -15,6 +16,10 @@ import { RecommendSection } from "@/components/sections/RecommendSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { AccessSection } from "@/components/sections/AccessSection";
 import { NewsSection } from "@/components/sections/NewsSection";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (

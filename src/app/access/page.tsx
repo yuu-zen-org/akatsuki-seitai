@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "院情報・アクセス",
   description:
     "整体院楓月-Akatsuki- 泉中央院へのアクセス・地図・営業時間のご案内。仙台市泉区、駐車場完備。泉中央駅より徒歩6分。",
-  alternates: { canonical: "/access/" },
+  alternates: { canonical: "/access" },
 };
 
 const staffPhotos = [

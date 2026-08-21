@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "料金",
   description:
     "整体院楓月-Akatsuki- 泉中央院の料金案内。初回限定キャンペーン2,980円（税込）。仙台市泉区で腰痛・肩こり・首の痛みにお悩みの方はお気軽にご相談ください。",
-  alternates: { canonical: "/price/" },
+  alternates: { canonical: "/price" },
 };
 
 const relatedPages: RelatedPage[] = [

@@ -94,7 +94,7 @@ export async function generateMetadata({
   return {
     title: `${rec.name}様 推薦の声`,
     description: rec.summary,
-    alternates: { canonical: `${siteConfig.url}/recommend/${slug}/` },
+    alternates: { canonical: `${siteConfig.url}/recommend/${slug}` },
   };
 }
 

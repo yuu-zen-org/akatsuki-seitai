@@ -113,10 +113,10 @@ export function generateMedicalWebPageJsonLd(symptom: Symptom) {
   return {
     "@context": "https://schema.org",
     "@type": "MedicalWebPage",
-    "@id": `${siteConfig.url}/symptoms/${symptom.slug}/#webpage`,
+    "@id": `${siteConfig.url}/symptoms/${symptom.slug}#webpage`,
     name: `${symptom.name}の改善｜${siteConfig.name}`,
     description: symptom.description,
-    url: `${siteConfig.url}/symptoms/${symptom.slug}/`,
+    url: `${siteConfig.url}/symptoms/${symptom.slug}`,
     about: {
       "@type": "MedicalCondition",
       name: symptom.name,
